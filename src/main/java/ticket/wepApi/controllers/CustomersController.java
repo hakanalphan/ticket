@@ -2,10 +2,10 @@ package ticket.wepApi.controllers;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ticket.business.abstracts.CustomerService;
+import ticket.core.utilities.results.DataResult;
+import ticket.core.utilities.results.Result;
 import ticket.entities.concretes.Customer;
 
 import java.util.List;
@@ -21,13 +21,20 @@ public class CustomersController {
 
     @Autowired
     public CustomersController(CustomerService customerService) {
+
         this.customerService = customerService;
     }
 
     @GetMapping("/getall")
-    public List<Customer> getAll(){
-        return customerService.getAll();
+    public DataResult<List<Customer>> getAll(){
+        return this.customerService.getAll();
 
 
+
+    }
+
+    @PostMapping( "/add")
+    public Result add(@RequestBody  Customer customer){
+        return this.customerService.add(customer);
     }
 }

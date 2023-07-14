@@ -3,7 +3,7 @@ package ticket.entities.concretes;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Table(name="customers")
+@Table(name="airports")
 @Data
 @Getter
 @Setter
@@ -14,7 +14,7 @@ public class Airport {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="id")
-    private int airportId;
+    private long airportId;
     @Column(name="name")
     private String name;
     @Column(name="city")
