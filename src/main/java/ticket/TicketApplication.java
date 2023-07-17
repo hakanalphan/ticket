@@ -14,8 +14,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class TicketApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(TicketApplication.class, args);
 	}
+
 	@Bean
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2)
@@ -24,5 +26,4 @@ public class TicketApplication {
 				.paths(PathSelectors.any())
 				.build();
 	}
-
 }

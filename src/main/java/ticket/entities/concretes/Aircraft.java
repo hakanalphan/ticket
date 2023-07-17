@@ -16,11 +16,13 @@ public class Aircraft {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name="aircraft_id")
-    private int aircraftId;
+    @Column(name="id")
+    private int id;
 
     @Column(name="name")
     private String name;
     @Column(name="capacity")
     private int capacity;
+
+
 }

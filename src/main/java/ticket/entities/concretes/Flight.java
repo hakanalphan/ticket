@@ -1,19 +1,28 @@
 package ticket.entities.concretes;
 
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
 
 @Entity
 @Table(name = "flights")
+@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+
 public class Flight {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JoinColumn(name = "id")
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "aircraft_id")
+    @JoinColumn(name = "aircraft")
     private Aircraft aircraft;
 
     @ManyToOne

@@ -1,6 +1,6 @@
 package ticket.core.utilities.results;
 
-public class Result {
+public class Result<A> {
 
     private boolean success;
     private String message;
@@ -12,7 +12,7 @@ public class Result {
 
     public Result(boolean success, String message) {
 
-        this.success = success;
+        this(success);
         this.message = message;
     }
 
