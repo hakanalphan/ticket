@@ -1,16 +1,8 @@
 # ticket
-Project Title:Flight Ticket Sales App
 
-
-A ticket sales application will be designed within the scope of my internship training.
-
-
-
-backend için Spring Boot,
-frontend için Reactjs ve DataBase olarakta Postgresql kullanılacaktır
 
 Project Title
-:Flight Ticket Sales App
+Flight Ticket Sales App
 
 The project summary:
 A ticket sales application will be designed within the scope of my internship training.
