@@ -4,14 +4,15 @@ package ticket.core.entities;
 
 
 
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import org.hibernate.validator.constraints.NotBlank;
 
-import javax.persistence.*;
-import javax.validation.constraints.Email;
+
 
 
 @Entity // Biizm için veritabanı nesnesidir
