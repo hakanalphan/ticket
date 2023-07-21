@@ -8,6 +8,7 @@ import ticket.core.utilities.results.Result;
 import ticket.core.utilities.results.SuccessDataResult;
 import ticket.core.utilities.results.SuccessResult;
 import ticket.dataaccess.abstracts.TicketRepository;
+import ticket.entities.concretes.Airport;
 import ticket.entities.concretes.Ticket;
 
 import java.util.List;
@@ -49,12 +50,16 @@ public class TicketManager implements TicketService {
     }
 
     @Override
-    public DataResult<Ticket> deleteTicket(Ticket ticketId) {
-
-
-        Ticket    ticket1 = ticketRepository.delete(id);
-        return new SuccessDataResult<>(ticket1,"");
+    public DataResult<Ticket> deleteTicket(long id) {
+         Ticket existingTicket = ticketRepository.findById(id).getData();
+        if (existingTicket != null) {
+            ticketRepository.deleteById(id);
+            return new SuccessDataResult<>(true, "Airport deleted successfully");
+        }
+        return new SuccessDataResult<>(false, "Airport not found");
     }
+
+
 
     @Override
     public DataResult<List<Ticket>> getAllTickets() {

@@ -20,5 +20,4 @@ public interface TicketRepository extends JpaRepository<Ticket,Long > {
     DataResult<Ticket> findById(long id);
 
 
-    Ticket delete(SingularAttribute<AbstractPersistable, Serializable> id);
 }

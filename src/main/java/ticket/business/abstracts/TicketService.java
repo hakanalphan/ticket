@@ -11,7 +11,7 @@ public interface TicketService {
     Result addTicket(Ticket ticket);
     DataResult<Ticket> updateTicket(Ticket ticket);
 
-    DataResult<Ticket> deleteTicket(Ticket ticketId);
+    DataResult<Ticket> deleteTicket(long id);
     DataResult<List<Ticket>> getAllTickets();
     DataResult<Ticket>getTicketById(Long id);
 
