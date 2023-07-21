@@ -52,7 +52,7 @@ public class TicketManager implements TicketService {
     public DataResult<Ticket> deleteTicket(Ticket ticketId) {
 
 
-    Ticket    ticket1 = ticketRepository.delete(id);
+        Ticket    ticket1 = ticketRepository.delete(id);
         return new SuccessDataResult<>(ticket1,"");
     }
 

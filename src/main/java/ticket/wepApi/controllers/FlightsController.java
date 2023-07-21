@@ -13,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/flights")
+@CrossOrigin
 public class FlightsController {
 
 
@@ -23,7 +24,7 @@ public class FlightsController {
         this.flightService = flightService;
     }
 
-    @GetMapping("/all")
+    @GetMapping("/getall")
     public DataResult<List<Flight>> getAllFlights() {
         return flightService.getAllFlights();
     }

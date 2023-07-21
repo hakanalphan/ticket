@@ -15,9 +15,11 @@ import java.util.List;
 @RequestMapping("/airports")
 public class AirportsController {
 
-    private final AirportService airportService;
 
     @Autowired
+    private final AirportService airportService;
+
+
     public AirportsController(AirportService airportService) {
         this.airportService = airportService;
     }

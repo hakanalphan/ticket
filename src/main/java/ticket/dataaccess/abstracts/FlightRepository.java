@@ -6,9 +6,8 @@ import ticket.core.utilities.results.DataResult;
 import ticket.entities.concretes.Flight;
 
 @Repository
-public interface FlightRepository extends JpaRepository<Flight,Integer> {
+public interface FlightRepository extends JpaRepository<Flight,Long> {
 
-    DataResult<Flight> deleteFlight(Long id);
-
-    DataResult<Flight>getFlightById(Long id);
+ // DataResult<Flight> deleteFlightById(Long id);
+    //DataResult<Flight>getFlightById(Long id);
 }

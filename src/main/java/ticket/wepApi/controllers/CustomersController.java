@@ -52,13 +52,14 @@ public class CustomersController {
         return customerService.getCustomerByPhoneNumber(phoneNumber);
     }
 
-    @PutMapping("/update")
-    public DataResult<Customer> updateCustomer(@RequestBody Customer customer) {
-        return customerService.uptadeCustomer(customer);
-    }
+    //@PutMapping("/update")
+    //public DataResult<Customer> saveCustomer(@RequestBody Customer customer) {
+        //return customerService.saveCustomer(customer);
+    //}
 
     @DeleteMapping("/delete/{id}")
     public DataResult<Customer> deleteCustomer(@PathVariable Long id) {
-        return customerService.deleteCustomer(id);
+       return   customerService.deleteCustomer(id);
+
     }
 }

@@ -44,9 +44,10 @@ public class FlightManager implements FlightService {
 
     @Override
     public DataResult<Flight> deleteFlight(long id) {
+     Flight flight=   flightRepository.findById(id).orElse(null);
 
 
-        return new SuccessDataResult<>(flightRepository.deleteFlight(id),"");
+        return new SuccessDataResult<Flight>(flight,"flight deleted");
 
     }
 
@@ -62,7 +63,7 @@ public class FlightManager implements FlightService {
     @Override
     public DataResult<Flight> getFlightById(Long id) {
 
-        return new SuccessDataResult<Flight>(this.flightRepository.getFlightById(id).getData(),"");
+        return new SuccessDataResult<Flight>(this.flightRepository.findById(id).orElseThrow(),"");
     }
 
 

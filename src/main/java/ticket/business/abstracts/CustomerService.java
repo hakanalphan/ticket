@@ -14,7 +14,7 @@ public interface CustomerService {
     DataResult<Customer> getCustomerById(long customerId);
     DataResult<List<Customer>> getCustomerByEmail(String email);
     DataResult<List<Customer>> getCustomerByPhoneNumber(String phoneNumber);
-    DataResult<Customer> uptadeCustomer(Customer customer);
+    //DataResult<Customer> saveCustomer(Customer customer);
     DataResult<Customer> deleteCustomer(Long id);
 
 

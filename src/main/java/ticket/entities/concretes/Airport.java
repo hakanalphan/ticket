@@ -1,7 +1,9 @@
 package ticket.entities.concretes;
 
-import jakarta.persistence.*;
+
 import lombok.*;
+
+import javax.persistence.*;
 
 @Table(name="airports")
 @Data

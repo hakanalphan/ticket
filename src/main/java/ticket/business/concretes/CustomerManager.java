@@ -54,18 +54,27 @@ public class CustomerManager implements CustomerService {
         return new SuccessDataResult<>(customer,"data listed ");
     }
 
-    @Override
-    public DataResult<Customer> uptadeCustomer(Customer customer) {
-        return new SuccessDataResult<>(this.customerRepository.uptadeCustomer(customer),"data uptaded");
-    }
+   // @Override
+    //public DataResult<Customer> saveCustomer(Customer customer) {
+        //return new SuccessDataResult<>(this.customerRepository.saveCustomer(customer),"data uptaded");
+   // }
+
+
 
 
 
     public DataResult<Customer> deleteCustomer(Long id) {
-       return new  SuccessDataResult<>(this.customerRepository.deleteCustomer(id),"data deleted");
+        Customer customerToDelete = customerRepository.findById(id).orElse(null);
+        if (customerToDelete == null) {
+            return new SuccessDataResult<>(null, "Customer not found.");
+        }
+
+        customerRepository.delete(customerToDelete);
+        return new SuccessDataResult<>(customerToDelete, "Customer deleted successfully.");
+    }
     }
 
 
-}
+
 
 

@@ -1,8 +1,10 @@
 package ticket.entities.concretes;
 
 
-import jakarta.persistence.*;
+
 import lombok.*;
+
+import javax.persistence.*;
 
 @Table(name="customers")
 @Data
@@ -14,7 +16,7 @@ import lombok.*;
 public class Customer {
 
      @Id
-     @GeneratedValue(strategy=GenerationType.IDENTITY)
+     @GeneratedValue(strategy= GenerationType.IDENTITY)
      @Column(name="id")
     private Long id;
     @Column(name="name")
@@ -25,5 +27,6 @@ public class Customer {
     @Column(name="email")
     private String email;
     @Column(name="number")
-    private long number;
+    private String phoneNumber;
+
 }
