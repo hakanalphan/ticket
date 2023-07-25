@@ -6,10 +6,11 @@ import org.springframework.context.annotation.Bean;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
-import springfox.documentation.swagger2.annotations.EnableSwagger2WebMvc;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
 
 @SpringBootApplication
-@EnableSwagger2WebMvc // Swagger'ı etkinleştiren anotasyon
+@EnableSwagger2// Swagger'ı etkinleştiren anotasyon
 public class TicketApplication {
 
 	public static void main(String[] args) {
@@ -20,7 +21,7 @@ public class TicketApplication {
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.select()
-				.apis(RequestHandlerSelectors.basePackage("ticket.controller"))
+				.apis(RequestHandlerSelectors.basePackage("ticket"))
 				.build();
 	}
 }
