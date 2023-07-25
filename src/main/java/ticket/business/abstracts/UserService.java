@@ -11,8 +11,11 @@ public interface UserService {
 
     Result add(Userr userr);
     DataResult<Userr> findByEmail(String email);
+    DataResult<Userr> findByUsername(String username);
 
-   Result update(Userr user);
+
+
+    Result update(Userr user);
 
     DataResult<Userr> getById(Long userId);
 

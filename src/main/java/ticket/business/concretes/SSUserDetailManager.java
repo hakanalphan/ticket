@@ -26,9 +26,9 @@ public class SSUserDetailManager implements SSUserDetailsService {
 
 
     @Override
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         try {
-            Userr user = userRepository.findByEmail(email);
+            Userr user = userRepository.findByUsername(username);
             if (user == null) {
                 return null;
             }

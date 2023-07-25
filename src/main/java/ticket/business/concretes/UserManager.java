@@ -46,6 +46,11 @@ public class UserManager implements UserService {
     }
 
     @Override
+    public DataResult<Userr> findByUsername(String username) {
+        return new SuccessDataResult<>(userRepository.findByUsername(username));
+    }
+
+    @Override
     public Result update(Userr user) {
         userRepository.save(user);
 

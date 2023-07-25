@@ -4,5 +4,5 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 public interface SSUserDetailsService {
 
-   UserDetails loadUserByUsername(String email);
+   UserDetails loadUserByUsername(String username);
 }
