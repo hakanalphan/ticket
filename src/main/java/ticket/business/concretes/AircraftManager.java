@@ -35,8 +35,10 @@ public class AircraftManager implements AircraftService {
         Aircraft aircraft = AircraftRepository.findById(id).orElse(null);
         return new SuccessDataResult<>(aircraft,"");}
 
+
+
     @Override
-    public DataResult<Aircraft> updateAircraft(long id) {
+    public DataResult<Aircraft> updateAircraft(long id, Aircraft aircraft) {
         return new SuccessDataResult<Aircraft>(this.AircraftRepository.getById(id),"");
     }
 

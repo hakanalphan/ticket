@@ -36,8 +36,8 @@ public class AircraftsController {
     }
 
     @PutMapping("/{id}")
-    public Result<Aircraft> updateAircraft(@PathVariable Long id) {
-        return aircraftService.updateAircraft(id);
+    public Result<Aircraft> updateAircraft(@PathVariable Long id,@RequestBody Aircraft aircraft) {
+        return aircraftService.updateAircraft(id,aircraft);
     }
 
     @DeleteMapping("/{id}")

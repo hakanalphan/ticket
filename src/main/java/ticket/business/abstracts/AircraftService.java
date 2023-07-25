@@ -10,7 +10,7 @@ public interface AircraftService {
 
     Result addAircraft(Aircraft aircraft);
     DataResult<Aircraft> getAircraftById(Long id);
-    DataResult<Aircraft> updateAircraft( long id);
+    DataResult<Aircraft> updateAircraft(long id, Aircraft aircraft);
 
     DataResult<Aircraft> deleteAircraft(Long id);
 

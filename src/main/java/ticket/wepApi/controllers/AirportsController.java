@@ -30,8 +30,8 @@ public class AirportsController {
     }
 
     @PostMapping("/add")
-    public Result addAirport(@RequestBody Airport airport) {
-        return (Result) new SuccessDataResult<>(airportService.addAirport(airport),"");
+    public DataResult<Airport> addAirport(@RequestBody Airport airport) {
+        return  new SuccessDataResult<>(airportService.addAirport(airport),"");
     }
 
     @GetMapping("/{airportId}")
@@ -41,7 +41,7 @@ public class AirportsController {
 
     @PutMapping("/update")
     public DataResult<Airport> updateAirport(@RequestBody Airport airport) {
-        return (DataResult<Airport>) airportService.updateAirport(airport);
+        return new SuccessDataResult<>(airportService.updateAirport(airport),"da");
     }
 
     @DeleteMapping("/delete/{id}")

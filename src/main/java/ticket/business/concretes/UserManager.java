@@ -11,6 +11,8 @@ import ticket.core.utilities.results.Result;
 import ticket.core.utilities.results.SuccessDataResult;
 import ticket.core.utilities.results.SuccessResult;
 
+import java.util.List;
+
 
 @Service
 public class UserManager implements UserService {
@@ -38,5 +40,32 @@ public class UserManager implements UserService {
     @Override
     public DataResult<Userr> findByEmail(String email) {
         return new SuccessDataResult<Userr>(this.userRepository.findByEmail(email),"user found");
+    }
+
+    @Override
+    public Result update(Userr user) {
+        userRepository.save(user);
+
+        return  new SuccessResult("User uptated") ;
+    }
+
+    @Override
+    public DataResult<Userr> getById(Long userId) {
+        Userr user = userRepository.findById(userId).orElse(null);
+
+           return new SuccessDataResult<>(user, "User retrieved");
+    }
+
+    @Override
+    public DataResult<List<Userr>> getAll() {
+       List<Userr> users = userRepository.findAll();
+        return new SuccessDataResult<>(users, "All users retrieved");
+    }
+
+    @Override
+    public Result delete(Long userId) {
+        userRepository.deleteById(userId);
+
+        return new SuccessResult("User deleted");
     }
 }
