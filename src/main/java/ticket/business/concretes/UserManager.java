@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
 import ticket.business.abstracts.UserService;
+import ticket.core.dataAccess.RoleRepository;
 import ticket.core.dataAccess.UserRepository;
 import ticket.core.entities.Userr;
 import ticket.core.utilities.results.DataResult;
@@ -11,6 +12,7 @@ import ticket.core.utilities.results.Result;
 import ticket.core.utilities.results.SuccessDataResult;
 import ticket.core.utilities.results.SuccessResult;
 
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -19,7 +21,8 @@ public class UserManager implements UserService {
 
 
     private UserRepository userRepository;
-
+    @Autowired
+    RoleRepository roleRepository;
 
 
     @Autowired
@@ -67,5 +70,11 @@ public class UserManager implements UserService {
         userRepository.deleteById(userId);
 
         return new SuccessResult("User deleted");
+    }
+
+    public void saveUser(Userr user) {
+        user.setRoles(Arrays.asList(roleRepository.findByRole("USER")));
+        user.setEnabled(true);
+        userRepository.save(user);
     }
 }

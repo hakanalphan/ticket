@@ -1,9 +1,12 @@
 package ticket.wepApi.controllers;
 
 
+import ch.qos.logback.core.model.Model;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 
 
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import ticket.business.abstracts.UserService;
 import ticket.core.entities.Userr;
@@ -26,7 +29,24 @@ public class UsersController {
     public UsersController(UserService userService) {
         this.userService = userService;
     }
+    @RequestMapping(value="/register" ,method= RequestMethod.GET)
+    public String registerPage(Model model){
+        model.addText("user");
+        return "register";
+    }
 
+    @RequestMapping(value="/register" ,method= RequestMethod.POST)
+    public String saveRegisterPage(@Valid @ModelAttribute("user") Userr user, BindingResult result, Model model){
+        model.addText("user");
+
+        if (result.hasErrors()){
+            return "register";
+        } else {
+            userService.add(user);
+
+        }
+        return "index";
+    }
     @PostMapping(value = "/add")
     public Result add (@RequestBody Userr userr){
         return

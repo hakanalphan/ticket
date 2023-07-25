@@ -7,12 +7,9 @@ package ticket.core.entities;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
 
-
+import java.util.Collection;
 
 
 @Entity // Biizm için veritabanı nesnesidir
@@ -20,6 +17,8 @@ import lombok.NonNull;
 @Table(name = "users")
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 public class Userr {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,4 +35,13 @@ public class Userr {
   @NonNull
   @NotBlank
   private String password;
+  private boolean enabled;
+  @Column(name = "username")
+  private String username;
+  @ManyToMany(fetch = FetchType.EAGER)
+  @JoinTable(joinColumns = @JoinColumn(name = "user_id"),
+          inverseJoinColumns = @JoinColumn(name = "role_id"))
+
+  private Collection<Role> roles;
+
 }
