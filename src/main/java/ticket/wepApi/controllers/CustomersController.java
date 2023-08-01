@@ -12,7 +12,7 @@ import ticket.core.utilities.results.SuccessDataResult;
 import ticket.entities.concretes.Customer;
 
 import java.util.List;
-
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/customers")
 public class CustomersController {

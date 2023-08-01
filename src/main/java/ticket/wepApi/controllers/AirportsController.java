@@ -11,6 +11,8 @@ import javax.xml.transform.Result;
 import java.util.List;
 
 
+
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/airports")
 public class AirportsController {

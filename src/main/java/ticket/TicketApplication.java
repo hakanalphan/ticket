@@ -10,7 +10,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 
 @SpringBootApplication
-@EnableSwagger2// Swagger'ı etkinleştiren anotasyon
+//@EnableSwagger2
 public class TicketApplication {
 
 	public static void main(String[] args) {

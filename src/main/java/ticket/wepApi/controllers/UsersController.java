@@ -18,6 +18,8 @@ import ticket.core.utilities.results.SuccessResult;
 import java.util.List;
 
 
+
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping(value="/api/users")
 public class UsersController {

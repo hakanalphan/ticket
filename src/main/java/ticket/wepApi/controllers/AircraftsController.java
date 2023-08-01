@@ -9,7 +9,7 @@ import ticket.entities.concretes.Aircraft;
 
 import java.util.List;
 
-
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/aircraft")
 public class AircraftsController {
