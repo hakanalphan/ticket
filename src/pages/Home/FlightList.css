@@ -1,0 +1,35 @@
+/* Tabloyu ortalamak için .table-container kullanın */
+.table-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Tabloya gölge vermek ve hücreler arasında boşluk bırakmak için .custom-table kullanın */
+.custom-table {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-spacing: 0; /* Hücreler arasında boşluk olmaması için */
+}
+
+/* Tablo satırlarını zebra renklere boyamak için .custom-table tbody tr:nth-child(odd) kullanın */
+.custom-table tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+/* Tablo satırlarına hover efekti eklemek için .custom-table tbody tr:hover kullanın */
+.custom-table tbody tr:hover {
+  background-color: #f0f0f0;
+}
+
+/* Tablo başlıklarını arka plan rengi ve metin rengi için .custom-table thead th kullanın */
+.custom-table thead th {
+  background-color: #333;
+  color: #fff;
+  padding: 8px;
+  text-align: left;
+}
+
+/* Tablo hücrelerinin padding'ini ve metin rengini belirlemek için .custom-table td kullanın */
+.custom-table td {
+  padding: 8px;
+  color: #333;
+}
